@@ -5,6 +5,8 @@ on:
 
     branches: [ master ]
 
+  workflow_dispatch:
+
 jobs:
   build:
 
@@ -28,9 +30,14 @@ jobs:
         uses: snickerbockers/submodules-init@v4
       - name: Build with Maven
         run: mvn -B package -T 2C
+      - name: select jar
+        run: |
+          cd target
+          rm -rf original*
+          echo "FILE=$(ls | grep jar)" >> $GITHUB_ENV
       - name: Archive artifacts (artifacts)
         uses: actions/upload-artifact@v2
         if: success()
         with:
-          name: Build
-          path: target/*
+          name: ${{ env.FILE }}
+          path: target/${{ env.FILE }}
