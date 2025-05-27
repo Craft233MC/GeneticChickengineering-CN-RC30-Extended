@@ -6,13 +6,15 @@ description: 粘液科技附属 鸡因工程 简体中文版。
 
 main: space.kiichan.geneticchickengineering.GeneticChickengineering
 
-website: https://github.com/kii-chan-reloaded/GeneticChickengineering
+website: https://github.com/Craft233MC/GeneticChickengineering
 
 depend: [Slimefun]
 
 version: ${project.version}
 
 api-version: 1.16
+
+folia-supported: true
 
 commands:
     geneticchickengineering:
