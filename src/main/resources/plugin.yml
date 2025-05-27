@@ -28,3 +28,6 @@ permissions:
   geneticchickengineering.command.calculatechance:
     description: Allows a player to calculate the chances of getting a specific offspring from two parents
     default: true
+
+libraries:
+  - org.xerial:sqlite-jdbc:3.41.2.2
